@@ -8,7 +8,7 @@ router.get("/", async (req, res) => {
     const restaurants = await Restaurant.find();
     res.send(restaurants);
   } catch (error) {
-    res.status(500).json({ message: err.message });
+    res.status(500).json({ message: error.message });
   }
 });
 //Getting one
