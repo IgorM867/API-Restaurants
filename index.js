@@ -14,6 +14,11 @@ db.once("open", () => console.log("Connected to Database"));
 app.use(express.json());
 
 const restaurantsRouter = require("./routes/restaurants.js");
+app.use((req, res, next) => {
+  res.setHeader("Access-Control-Allow-Origin", "https://restaurant-im.netlify.app");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
 app.use("/restaurants", restaurantsRouter);
 app.listen(port, () => {
   console.log(`Server listenig on port: ${port}`);
