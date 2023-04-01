@@ -17,7 +17,7 @@ const restaurantsRouter = require("./routes/restaurants.js");
 app.use((req, res, next) => {
   res.setHeader("Access-Control-Allow-Origin", "https://restaurant-im.netlify.app");
   //res.setHeader("Access-Control-Allow-Origin", "http://127.0.0.1:5500");
-  res.setHeader("Access-Control-Allow-Methods", "GET, PATCH POST DELETE");
+  res.setHeader("Access-Control-Allow-Methods", "GET, PATCH, POST, DELETE");
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
   next();
 });
